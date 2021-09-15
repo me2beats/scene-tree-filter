@@ -42,8 +42,6 @@ func filter(text:String):
 	if not text:
 		remove_custom_filtering()
 
-	print("filre?")
-
 	if not text.to_lower() in data.classes:
 		set("custom_colors/clear_button_color", fail_color)
 		return
