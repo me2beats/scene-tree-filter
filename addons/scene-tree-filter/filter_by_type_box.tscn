@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/scene-tree-filter/line_edit.gd" type="Script" id=1]
+[ext_resource path="res://addons/scene-tree-filter/checkbox.gd" type="Script" id=2]
+
+[node name="FilterByTypeBox" type="HBoxContainer"]
+margin_right = 192.0
+margin_bottom = 63.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_right = 164.0
+margin_bottom = 63.0
+hint_tooltip = "Filter nodes by class
+Please enter a valid classname"
+size_flags_horizontal = 3
+custom_colors/clear_button_color = Color( 0.498039, 0.796078, 0.313726, 1 )
+clear_button_enabled = true
+placeholder_text = "Filter by class"
+script = ExtResource( 1 )
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 168.0
+margin_right = 192.0
+margin_bottom = 63.0
+hint_tooltip = "toggle enable filtering nodes by type"
+pressed = true
+script = ExtResource( 2 )
+
+[connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
